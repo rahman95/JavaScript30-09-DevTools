@@ -18,28 +18,60 @@
     }
 
     // Regular
+    console.log('Hello world!');
 
     // Interpolated
+    console.log("I'm a %s guy", '❄️');
 
     // Styled
+    console.log('%c Fancy Text', 'font-size:25px; color:blue; background:yellow;')
 
     // warning!
+    console.warn('I am a warning!')
 
     // Error :|
+    console.error('I am a error!')
 
     // Info
+    console.info('Useful info here')
 
     // Testing
+    console.assert(1 === 1, 'incorrect') // only shows if failed
+    console.assert(1 === 2, 'incorrect') // only shows if failed
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    let text = document.querySelector('p');
+    console.log(text); //will just return the element
+    console.dir(text); //shows methods and more info
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(dog.name);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`Thats ${dog.age * 7} human years!`);
+      console.groupEnd(dog.name);
+    })
 
     // counting
+    console.count('ray');
+    console.count('ray');
+    console.count('steve');
+    console.count('ray');
+    console.count('bob');
+    console.count('bob');
 
     // timing
+    console.time('fetch');
+    fetch('https://api.github.com/users/rahman95')
+    .then(data => data.json())
+    .then(data => {
+      console.log(data);
+    })
+    console.timeEnd('fetch')
 
   </script>
 </body>
